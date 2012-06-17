@@ -156,5 +156,7 @@ Texyla.prototype.defaultOptions = {
 	// cesta k náhledu
 	previewPath: null,
 	// jazyk
-	language: "cs"
+	language: "cs",
+	// CSS soubory pouzite v preview iframe
+	previewCss: []
 };
