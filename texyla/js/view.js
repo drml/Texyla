@@ -100,7 +100,9 @@ Texyla.prototype.view = function(type, first) {
 		};
 
 		// kešuje poslední texy
-		this.lastPreviewedTexy = taVal;
+		if (this.options.cachePreview){
+			this.lastPreviewedTexy = taVal;
+		}
 
 		// zobrazí prosím čekejte
 		var parent = this[type == "preview" ? "preview" : "htmlPreview"].parent();

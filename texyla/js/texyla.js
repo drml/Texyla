@@ -52,6 +52,8 @@ function Texyla(textarea, options) {
 	for (var i = 0; i < this.initPlugins.length; i++) {
 		this.initPlugins[i].apply(this);
 	}
+
+	return this;
 };
 
 // nahradí v řetězci hodnoty za proměnné
@@ -115,6 +117,11 @@ Texyla.prototype.submit = function () {
 	}
 };
 
+// Odeslat formulář
+Texyla.prototype.clearCache = function () {
+    this.lastPreviewedTexy = null;
+};
+
 // chybový handler
 Texyla.prototype.error = function (message) {
 	alert("Error: " + message);
@@ -161,5 +168,8 @@ Texyla.prototype.defaultOptions = {
 	// jazyk
 	language: "cs",
 	// CSS soubory pouzite v preview iframe
-	previewCss: []
+	previewCss: [],
+	// kesovani nahledu
+	cachePreview: true
+
 };
