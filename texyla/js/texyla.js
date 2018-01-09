@@ -104,7 +104,7 @@ Texyla.prototype.submit = function () {
 		}
 	}
 	if (typeof f.onsubmit == 'function') {
-		if (f.onsubmit() !== false) {
+		if (f.onsubmit()) {
 			submitnout();
 		}
 	} else {
@@ -118,7 +118,7 @@ Texyla.prototype.error = function (message) {
 };
 
 // výchozí adresář
-Texyla.prototype.baseDir = null;
+Texyla.prototype.baseDir = jQuery("head script:last").attr("src").replace(/(\/js)?\/?[\w-]+\.js$/, '');
 
 // jazyky
 Texyla.prototype.languages = {};
@@ -156,5 +156,7 @@ Texyla.prototype.defaultOptions = {
 	// cesta k náhledu
 	previewPath: null,
 	// jazyk
-	language: "cs"
+	language: "cs",
+	// CSS soubory pouzite v preview iframe
+	previewCss: []
 };

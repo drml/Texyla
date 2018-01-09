@@ -18,8 +18,9 @@ div.texyla ul.toolbar li ul li span {background-position: 2px 50% !important; ba
 
 /* náhledy */
 div.view-header {line-height:30px; background-repeat:no-repeat; background:no-repeat 5px 50%; padding-left:26px;}
-div.preview-wrapper {background:white; overflow:auto; position: relative; margin:5px;}
-div.preview, pre.html-preview {padding:10px; margin:0;}
+div.preview-wrapper {background:white; overflow: hidden; position: relative; margin:5px;}
+/*div.preview,*/ pre.html-preview {padding:10px; margin:0;}
+iframe.preview { display: block; margin: 0; padding: 0; border: none; width: 100%; height: 100%; }
 div.preview-wait {border:1px solid #777; padding:10px 10px 10px 36px; background:url("../img/loader.gif") 10px 10px no-repeat; position:absolute; z-index:999;}
 
 /* tlačítkové lišty */

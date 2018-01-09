@@ -34,9 +34,18 @@ Texyla.prototype.wrap = function () {
 		this.lng.btn_preview + '</div>'
 	);
 
-	this.preview = jQuery('<div class="preview"></div>')
+	this.preview = jQuery('<iframe class="preview"></iframe>')
 		.appendTo(this.previewDiv)
 		.wrap('<div class="preview-wrapper ui-widget-content"></div>');
+	
+	// nastavi CSS soubory pro preview iframe
+	var _cssFiles = '';
+	
+	for(var i = 0; i < this.options.previewCss.length; i++) {
+		_cssFiles += '<link rel="stylesheet" type="text/css" href="' + this.options.previewCss[i] + '">';
+	}
+	
+	this.preview.contents().find('head').append(_cssFiles);
 
 	/* div s html náhledem */
 	this.htmlPreviewDiv = jQuery('<div class="html-preview-div"></div>').insertAfter(this.previewDiv);

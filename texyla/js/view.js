@@ -84,7 +84,8 @@ Texyla.prototype.view = function(type, first) {
 		var _this = this;
 		function onLoad(data) {
 			// náhled
-			_this.preview.html(data).show();
+			_this.preview.contents().find('body').html(data);
+			_this.preview.show();
 
 			// náhled html
 			_this.htmlPreview.text(data.replace(new RegExp("\n", "g"), _this.texy.lf())).show();

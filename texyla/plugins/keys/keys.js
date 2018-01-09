@@ -29,13 +29,13 @@ jQuery.texyla.extend({
 		}
 
 		// Zrušit odsazení (shift + tab)
-		if (pressedKey == 9 && e.shiftKey) {
+		if (pressedKey == 9 && e.shiftKey && !e.ctrlKey && !e.altKey) {
 			this.texy.unindent();
 			action = true;
 		}
 
 		// tabulátor (tab)
-		if (pressedKey == 9 && !e.shiftKey) {
+		if (pressedKey == 9 && !e.shiftKey && !e.ctrlKey && !e.altKey) {
 			if (this.texy.update().text().indexOf(this.texy.lf()) == -1) {
 				this.texy.tag('\t', '');
 			} else {
@@ -65,3 +65,4 @@ jQuery.texyla.extend({
 		}
 	}
 });
+
