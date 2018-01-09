@@ -1,9 +1,10 @@
 // Rozšířit jQuery o texylování
 jQuery.fn.extend({
 	texyla: function (options) {
-		this.filter("textarea").each(function () {
-			new Texyla(this, options);
-		});
+        if (!$.data(this, "texyla")) {
+            $.data(this, "texyla",
+                new Texyla( this, options ));
+        }
 	}
 });
 
